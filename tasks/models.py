@@ -17,7 +17,7 @@ class Task(models.Model):
     difficulty = models.IntegerField(verbose_name='Сложность')
 
     def __str__(self):
-        return f'{self.name_with_index} ()'
+        return f'{self.name_with_index}'
 
 
 class Contest(models.Model):
@@ -27,4 +27,7 @@ class Contest(models.Model):
     difficulty_from = models.IntegerField(verbose_name='Нижняя граница сложности')
     difficulty_to = models.IntegerField(verbose_name='Верхняя граница сложности')
     subject = models.CharField(max_length=100, verbose_name='Тема')
+
+    def __str__(self):
+        return f'{self.subject} ({self.difficulty_from} - {self.difficulty_to})'
 
