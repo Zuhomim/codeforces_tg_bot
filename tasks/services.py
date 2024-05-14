@@ -101,6 +101,8 @@ def set_contest_for_free_tasks():
 
 
 def get_contest_by_task_difficulty(subject, diff_from, diff_to):
+    """Возвращает Contest по выбранным фильтрам темы (subject) и диапазону сложности"""
+
     contest_list = list(Contest.objects.filter(subject=subject, difficulty_from=diff_from, difficulty_to=diff_to))
     contest = choice(contest_list)
     return contest
