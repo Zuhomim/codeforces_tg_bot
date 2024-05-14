@@ -165,3 +165,4 @@ pyproject.toml
 .venv/
 .DS_Store
 dump.rdb
+pytest.ini
